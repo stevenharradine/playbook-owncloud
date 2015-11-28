@@ -1,0 +1,13 @@
+---
+- connection: local
+  hosts: localhost
+  sudo: true
+  remote_user: douglas
+  vars:
+    project: owncloud
+  roles:
+    - role: stevenharradine.static-ip
+      static_ip_address: "192.168.1.{% if environment_tier=='development' %}98{% elif environment_tier=='production' %}9{% endif %}"
+    - role: stevenharradine.hostname
+    - role: telusdigital.nginx
+    - role: stevenharradine.owncloud
