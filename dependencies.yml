@@ -1,5 +1,4 @@
 ---
 - src: stevenharradine.static-ip
 - src: stevenharradine.hostname
-- src: telusdigital.nginx
 - src: stevenharradine.owncloud
