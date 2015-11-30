@@ -7,9 +7,10 @@
     project: owncloud
   roles:
     - role: stevenharradine.static-ip
-      static_ip_address: "192.168.1.{% if environment_tier=='development' %}98{% elif environment_tier=='production' %}9{% endif %}"
+      static_ip_address: "{{ ip_address }}"
     - role: stevenharradine.hostname
     - role: stevenharradine.owncloud
+      owncloud_external_ip: "{{ ip_address }}"
   tasks:
     - name: copy boot.sh
       template:
