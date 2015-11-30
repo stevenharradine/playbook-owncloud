@@ -10,3 +10,16 @@
       static_ip_address: "192.168.1.{% if environment_tier=='development' %}98{% elif environment_tier=='production' %}9{% endif %}"
     - role: stevenharradine.hostname
     - role: stevenharradine.owncloud
+  tasks:
+    - name: copy boot.sh
+      template:
+        src: templates/boot.sh
+        dest: /data/boot.sh
+        owner: www-data
+        group: www-data
+        mode: 0755
+    - name: create nessasary folders for services to run | cron
+      cron:
+        name: "create nessasary folders for services to run"
+        special_time: reboot
+        job: /bin/bash /data/boot.sh
