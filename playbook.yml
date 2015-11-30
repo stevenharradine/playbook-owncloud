@@ -23,3 +23,9 @@
         name: "create nessasary folders for services to run"
         special_time: reboot
         job: /bin/bash /data/boot.sh
+    - name: enable pseudo-forge
+      lineinfile:
+        dest: /home/douglas/.bashrc
+        state: present
+        line: "alias reforge='cd /home/douglas/playbook-owncloud/ && sudo ansible-galaxy install -r dependencies.yml --force && ansible-playbook playbook -i hosts/development'"
+        insertafter: EOF
