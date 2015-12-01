@@ -32,5 +32,4 @@
         line: "alias reforge='cd /home/douglas/playbook-owncloud/ && sudo ansible-galaxy install -r dependencies.yml --force && ansible-playbook playbook.yml -i hosts/development'"
         insertafter: EOF
     - name: initalize database
-      user: www-data
-      command: php /data/www/docroot/owncloud/occ  maintenance:install --database "mysql" --database-name "owncloud"  --database-user "owncloud" --database-pass "secure_password" --admin-user "douglas" --admin-pass "password"
+      command: sudo -u www-data php /data/www/docroot/owncloud/occ  maintenance:install --database "mysql" --database-name "owncloud"  --database-user "owncloud" --database-pass "secure_password" --admin-user "douglas" --admin-pass "password"
