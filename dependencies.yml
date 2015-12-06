@@ -1,5 +1,5 @@
 ---
 - src: stevenharradine.static-ip
 - src: stevenharradine.hostname
-- src: telusdigital.ssl-certificate
+- src: stevenharradine.nfs
 - src: stevenharradine.owncloud
