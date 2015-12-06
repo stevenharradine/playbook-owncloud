@@ -10,6 +10,7 @@
     - role: stevenharradine.static-ip
       static_ip_address: "{{ ip_address }}"
     - role: stevenharradine.hostname
+    - role: telusdigital.ssl-certificate
     - role: stevenharradine.owncloud
       owncloud_external_ip: "{{ ip_address }}"
   tasks:
