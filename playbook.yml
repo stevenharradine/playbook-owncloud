@@ -12,6 +12,7 @@
       static_ip_address: "{{ ip_address }}"
     - role: stevenharradine.hostname
     - role: stevenharradine.nfs
+      nfs_client: yes
       nfs_client_source: "192.168.1.20:/mnt/md0/owncloud-data-{{ environment_tier }}/"
       nfs_client_mount_point: "{{ mount_point }}"
     - role: stevenharradine.owncloud
