@@ -17,6 +17,9 @@
     - role: stevenharradine.owncloud
       owncloud_external_ip: "{{ ip_address }}"
       owncloud_datadirectory: "{{ mount_point }}"
+      owncloud_users:
+        - { user: user1, password: password }
+        - { user: user2, password: password }
   tasks:
     - name: copy boot.sh
       template:
