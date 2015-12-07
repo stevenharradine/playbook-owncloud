@@ -17,6 +17,9 @@
     - role: stevenharradine.owncloud
       owncloud_external_ip: "{{ ip_address }}"
       owncloud_datadirectory: "{{ mount_point }}"
+      owncloud_database_password: secure_password
+      owncloud_admin_user: douglas
+      owncloud_admin_password: password
       owncloud_users:
         - { user: user1, password: password }
         - { user: user2, password: password }
