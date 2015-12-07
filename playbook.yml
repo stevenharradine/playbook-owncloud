@@ -20,9 +20,11 @@
       owncloud_database_password: secure_password
       owncloud_admin_user: douglas
       owncloud_admin_password: password
-      owncloud_users:
+      owncloud_users_development:
         - { user: user1, password: password }
+      owncloud_users_production:
         - { user: user2, password: password }
+      owncloud_users: "{% if environment_tier=='development' %}{{ owncloud_users_development }}{% elif environment_tier=='production' %}{{ owncloud_users_production }}{% endif %}"
   tasks:
     - name: copy boot.sh
       template:
