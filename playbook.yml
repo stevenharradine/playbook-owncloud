@@ -42,5 +42,5 @@
       lineinfile:
         dest: /home/douglas/.bashrc
         state: present
-        line: "alias reforge='cd /home/douglas/playbook-owncloud/ && git pull && sudo ansible-galaxy install -r dependencies.yml --force && ansible-playbook playbook.yml -i hosts/development'"
+        line: "alias reforge='cd /home/douglas/playbook-owncloud/ && git pull && sudo ansible-galaxy install -r dependencies.yml --force && ansible-playbook playbook.yml -i hosts/{{ environment_tier }}'"
         insertafter: EOF
