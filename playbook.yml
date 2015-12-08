@@ -5,7 +5,7 @@
   remote_user: douglas
   vars:
     project: owncloud
-    ip_address: "192.168.1.{% if environment_tier=='development' %}98{% elif environment_tier=='production' %}9{% endif %}"
+    ip_address: "192.168.1.{% if environment_tier=='development' %}99{% elif environment_tier=='production' %}9{% endif %}"
     mount_point: /data/www/owncloud_data/
   roles:
     - role: stevenharradine.static-ip
