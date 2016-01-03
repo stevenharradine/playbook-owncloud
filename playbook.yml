@@ -3,6 +3,8 @@
   hosts: localhost
   sudo: true
   remote_user: douglas
+  vars_files:
+    - vault.yml
   vars:
     project: owncloud
     ip_address: "192.168.1.{% if environment_tier=='development' %}99{% elif environment_tier=='production' %}9{% endif %}"
