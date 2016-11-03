@@ -13,7 +13,10 @@
     - role: stevenharradine.static-ip
       static_ip_address: "{{ ip_address }}"
     - role: stevenharradine.hostname
-    - role: stevenharradine.filebeat
+    - role: stevenharradine.rsyslog
+      rsyslog_isclient: yes
+      rsyslog_remote:
+        - { mask: "*.*", protocol: "@@", host: "192.168.2.{% if environment_tier=='development' %}89{% elif environment_tier=='production' %}14{% endif %}", port: 514 }
     - role: stevenharradine.nfs
       nfs_client: yes
       nfs_client_source: "192.168.2.20:/mnt/md0/owncloud-data-{{ environment_tier }}/"

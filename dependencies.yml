@@ -1,6 +1,6 @@
 ---
 - src: stevenharradine.static-ip
 - src: stevenharradine.hostname
-- src: stevenharradine.filebeat
+- src: stevenharradine.rsyslog
 - src: stevenharradine.nfs
 - src: stevenharradine.owncloud
